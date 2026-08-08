@@ -44,28 +44,6 @@ export default function Hero() {
               delay: i * 0.5,
             }}
           />
-        ))}
-      </div>
-
-      <div className={styles.cometsContainer}>
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={`comet-${i}`}
-            className={`${styles.comet} ${styles[`comet${i}`]}`}
-            animate={{ 
-              opacity: [0, 1, 0], 
-              x: [0, -800], 
-              y: [0, 800] 
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatDelay: 5 + (i * 4), /* Space them out so they don't fall together */
-              ease: "easeOut",
-              delay: 2 + i * 2,
-            }}
-          />
-        ))}
       </div>
 
       <div className={styles.content}>
