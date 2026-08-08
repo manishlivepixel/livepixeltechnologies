@@ -8,18 +8,43 @@ export default function Hero() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.videoBackground}>
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className={styles.bgVideo}
-          poster="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop"
-        >
-          {/* High-quality cinematic placeholder video */}
-          <source src="https://cdn.coverr.co/videos/coverr-flying-through-a-glowing-tunnel-4493/1080p.mp4" type="video/mp4" />
-        </video>
+        <div className={styles.bgImageStatic} />
+        <div className={styles.bgImageWater} />
+        
+        {/* SVG Filter for realistic water movement */}
+        <svg className={styles.svgFilter}>
+          <filter id="water-ripple">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.05" numOctaves="2" result="noise">
+              <animate attributeName="baseFrequency" values="0.01 0.05; 0.015 0.06; 0.01 0.05" dur="12s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="B" />
+          </filter>
+        </svg>
         <div className={styles.overlay} />
+      </div>
+
+      <div className={styles.starsContainer}>
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`${styles.star} ${styles[`star${i}`]}`}
+            animate={{ 
+              opacity: [0.4, 1, 0.4], 
+              scale: [0.8, 1.3, 0.8],
+              boxShadow: [
+                "0 0 10px 2px rgba(255, 255, 255, 0.5)",
+                "0 0 20px 8px rgba(255, 255, 255, 0.9)",
+                "0 0 10px 2px rgba(255, 255, 255, 0.5)"
+              ]
+            }}
+            transition={{
+              duration: 2 + (i % 3),
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+          />
+        ))}
       </div>
 
       <div className={styles.content}>

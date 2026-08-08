@@ -20,10 +20,33 @@
   overflow: hidden;
 }
 
-.bgVideo {
+.bgImageStatic {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop') center/cover no-repeat;
+  z-index: 1;
+}
+
+.bgImageWater {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop') center/cover no-repeat;
+  z-index: 2;
+  clip-path: inset(62% 0 0 0); /* Display only the bottom portion containing the water */
+  filter: url('#water-ripple');
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+.svgFilter {
+  position: absolute;
+  width: 0;
+  height: 0;
   pointer-events: none;
 }
 
@@ -117,3 +140,30 @@
   background: #fff;
   color: #000;
 }
+
+.starsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Specific positions to scatter them around the sky */
+.star0 { top: 25%; left: 42%; width: 5px; height: 5px; } /* The prominent one near the text */
+.star1 { top: 15%; left: 65%; width: 3px; height: 3px; }
+.star2 { top: 40%; left: 80%; width: 4px; height: 4px; }
+.star3 { top: 20%; left: 15%; width: 2px; height: 2px; }
+.star4 { top: 55%; left: 30%; width: 4px; height: 4px; }
+.star5 { top: 10%; left: 85%; width: 6px; height: 6px; }
