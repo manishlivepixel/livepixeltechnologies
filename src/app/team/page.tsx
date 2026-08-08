@@ -35,7 +35,7 @@ const coreTeam = [
   { name: "Samule F. Steininger", role: "Animation Director / Producer", image: "images/profile-2.jpg" },
   { name: "Sanjay Kumar", role: "Head - Colorization and Restoration", image: "img_new/our_team/sanjay.jpg" },
   { name: "Rupali Chaturvedi", role: "International Business Coordination", image: "img_new/our_team/rupali2.jpg" },
-  { name: "Tapan Ramchandran", role: "Operations Head (3D, AR/VR)", image: "img_new/our_team/TapanRamchandran.jpg" },
+  { name: "Tapan Ramchandran", role: "Operations Head (3D, AR/VR)", image: "/tapan.jpeg" },
   { name: "Sanjay Jangid", role: "Animation Designer and Consultant", image: "images/Sanjay Jangid.jpeg" },
   { name: "Sandeep Parab", role: "Team Leader", image: "img_new/our_team/sandeep2_fix.jpg" },
   { name: "Dinesh Tambe", role: "Motion Graphic Artist", image: "img_new/our_team/Dinesh Tambe_Pic_fix.jpg" },
@@ -63,7 +63,7 @@ export default function TeamPage() {
             {managementTeam.map((member, i) => (
               <div key={i} className={styles.mgmtCard}>
                 <div className={styles.imageWrapper}>
-                  <img src={`${BASE_URL}/${member.image}`} alt={member.name} />
+                  <img src={member.image.startsWith('/') ? member.image : `${BASE_URL}/${member.image}`} alt={member.name} />
                 </div>
                 <div className={styles.mgmtInfo}>
                   <h2>{member.name}</h2>
@@ -83,7 +83,7 @@ export default function TeamPage() {
             <div className={styles.coreGrid}>
               {coreTeam.map((member, i) => (
                 <div key={i} className={styles.coreCard}>
-                  <img src={`${BASE_URL}/${member.image}`} alt={member.name} className={styles.coreImg} />
+                  <img src={member.image.startsWith('/') ? member.image : `${BASE_URL}/${member.image}`} alt={member.name} className={styles.coreImg} />
                   <div className={styles.coreOverlay}>
                     <h3>{member.name}</h3>
                     <span>{member.role}</span>
