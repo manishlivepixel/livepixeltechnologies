@@ -1,0 +1,119 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  margin-top: 110px; /* Offset for header + topbar */
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  padding-left: 5%;
+  color: #fff;
+}
+
+.lineMask {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  display: block;
+}
+
+.lineMaskSubtitle {
+  overflow: hidden;
+}
+
+.title {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: #fff;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primaryBtn, .secondaryBtn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: var(--accent-color);
+  color: #fff;
+  border: 2px solid var(--accent-color);
+}
+
+.primaryBtn:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.secondaryBtn:hover {
+  background: #fff;
+  color: #000;
+}

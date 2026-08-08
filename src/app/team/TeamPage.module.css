@@ -1,0 +1,163 @@
+.pageHeader {
+  padding-top: 150px;
+  background: radial-gradient(circle at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contentSection {
+  background-color: var(--bg-primary);
+}
+
+.managementGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.mgmtCard {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.mgmtCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.mgmtCard:hover .imageWrapper img {
+  transform: scale(1.05);
+}
+
+.mgmtInfo {
+  padding: 2.5rem;
+}
+
+.mgmtInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mgmtInfo span {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.mgmtInfo p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.coreIntro {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.coreGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.coreCard {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1/1.2;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.coreImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.coreCard:hover .coreImg {
+  transform: scale(1.05);
+}
+
+.coreOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.coreCard:hover .coreOverlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.coreOverlay h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.coreOverlay span {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .managementGrid {
+    grid-template-columns: 1fr;
+  }
+}
