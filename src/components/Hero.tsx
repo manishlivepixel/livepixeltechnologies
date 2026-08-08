@@ -44,6 +44,7 @@ export default function Hero() {
               delay: i * 0.5,
             }}
           />
+        ))}
       </div>
 
       <div className={styles.content}>
