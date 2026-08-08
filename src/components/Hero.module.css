@@ -167,3 +167,29 @@
 .star3 { top: 20%; left: 15%; width: 2px; height: 2px; }
 .star4 { top: 55%; left: 30%; width: 4px; height: 4px; }
 .star5 { top: 10%; left: 85%; width: 6px; height: 6px; }
+
+.cometsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%; /* Keep them in the upper sky */
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.comet {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.8));
+  opacity: 0; /* Starts hidden */
+}
+
+.comet0 { top: 10%; left: 80%; }
+.comet1 { top: -10%; left: 50%; }
+.comet2 { top: 30%; left: 110%; }
