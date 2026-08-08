@@ -173,10 +173,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 70%; /* Keep them in the upper sky */
+  height: 60%; /* Stop them completely before they reach the boat or water */
   z-index: 2;
   pointer-events: none;
   overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .comet {
